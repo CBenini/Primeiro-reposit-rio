@@ -1,6 +1,5 @@
 M:
 Morango
-Melão
 Melancia
 
 B:
