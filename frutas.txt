@@ -1,6 +1,11 @@
 M:
 Morango
 Melancia
+Mamão
 
 B:
 Banana
+
+A:
+Abacaxi
+Abacate
