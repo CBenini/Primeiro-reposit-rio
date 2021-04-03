@@ -1,0 +1,234 @@
+/*GERAL*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #232323;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.espaco {
+    margin-top: 6%;
+}
+
+
+/* Início Contatos */
+
+.tele {
+    height: 15px;
+    width: 15px;
+    margin-top: 2px;
+    margin-right: 3px;
+}
+
+.whats {
+    height: 25px;
+    width: 25px;
+    margin-top: -3px;
+}
+
+.outlook {
+    height: 30px;
+    width: 30px;
+    margin-top: -6px;
+}
+
+.contato {
+    color: white;
+    background-color: #9ACD32;
+    border-bottom: solid #232323 3px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.contato ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.whatsapp {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+/* Fim Contatos */
+
+
+/* Início Header */
+
+img {
+    float: left;
+    margin: auto;
+    height: 90px;
+}
+
+.header {
+    background-color: #9ACD32;
+    width: 100%;
+    height: 95px;
+    color: #232323;
+    border-bottom: solid #232323 3px;
+}
+
+.header h2 {
+    float: left;
+    font-weight: bold;
+    font-size: medium;
+    margin-top: 65px;
+    margin-left: -45px;
+}
+
+.header ul {
+    list-style: none;
+    float: right;
+}
+
+.header h1,
+.header ul {
+    margin-top: 23px;
+}
+
+.header li {
+    display: inline-block;
+    font-size: 17px;
+    padding: 6px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.header ul li a {
+    text-decoration: none;
+    background-color: #9ACD32;
+    color: white;
+}
+
+
+/* Fim Header */
+
+
+/* Início Abas */
+
+.abas {
+    border-bottom: solid #9ACD32 10px;
+}
+
+.abas ul li {
+    list-style: none;
+    text-decoration: none;
+    color: #9ACD32;
+    font-weight: bold;
+}
+
+.abas ul li a {
+    list-style: none;
+    text-decoration: none;
+    color: #9ACD32;
+    font-weight: bold;
+}
+
+.abas li {
+    display: inline-block;
+    font-size: 17px;
+}
+
+.abas ul {
+    text-align: center;
+}
+
+.abas .text-black {
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Fim das Abas */
+
+
+/* Início Banner */
+
+.banner {
+    width: auto;
+    height: 470px;
+    text-align: center;
+    background-color: white;
+    background-size: cover;
+    background-image: url(./Imagens/Banner\ opaco.jpg);
+    border-bottom: solid #9ACD32 10px;
+}
+
+.banner .container .textoBanner {
+    padding-top: 8%;
+    color: white;
+    margin: auto;
+}
+
+
+/* Fim Banner */
+
+
+/* Início Membros */
+
+.equipe .container .textoEquipe {
+    margin-top: 5%;
+    text-align: center;
+    color: white;
+}
+
+.equipe .container .membros {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.equipe .container .membros ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 3%;
+    font-size: medium;
+}
+
+.equipe .container .membros ul li .imgMembros {
+    width: 85px;
+    height: auto;
+    cursor: pointer;
+}
+
+.equipe .container .membros ul li h3 {
+    color: white;
+}
+
+
+/* Início Textos dos Membros */
+
+.equipe .container .estiloTxtMembros {
+    padding: 2%;
+    width: 50%;
+    border: solid #9ACD32 10px;
+    font-size: large;
+    color: white;
+    margin: auto;
+    display: none;
+    text-align: justify;
+}
+
+
+/* Fim dos Textos do Membros */
+
+.equipe {
+    border-bottom: solid #9ACD32 10px;
+}
+
+
+/* Fim Membros */
