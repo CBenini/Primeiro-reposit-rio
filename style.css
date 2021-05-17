@@ -1,0 +1,393 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+        /* SÓ COLOCAR QUANDO COLOCAR COR NO HEADER */
+    margin: 0;
+        /* SÓ COLOCAR QUANDO COLOCAR COR NO HEADER */
+        background-color: rgb(35, 35, 35);
+}
+
+.container { 
+    width: 80%;
+    margin: auto;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* CABEÇALHO */
+
+.header {
+    background-color: rgb(19, 19, 19);;
+    width: 100%;
+        /*overflow: auto; /* cuidado*/
+    height: 100px;
+        /*ATENÇÃO VOLTA A NAV AQUI SE SUMIR*/
+    border-bottom: 3px solid #8C52FF;
+    position: fixed;
+    
+}
+
+.header .container {
+    height: 80px;
+}
+
+
+.header h1 a {
+    margin: 0;
+    padding: 0;
+    float: left;
+    /*ATENÇÃO - VAI SUMIR A NAV*/
+    margin-top: 5px;
+    color: white;
+    text-transform: none;
+}
+
+.header h1:hover {
+    cursor: pointer;
+}
+
+.imgLogo{
+    margin-left: -8px;
+    margin-bottom: -7px;
+    height: 65px;
+}
+
+.header ul {
+    list-style-type: none;
+        /*ATENÇÃO - NAO É NO NAV*/
+    float: right;
+        /*ATENÇÃO - VAI SUMIR A NAV*/
+    margin-top: 40px;
+}
+
+.header li {
+    float: left;
+        /*ATENÇÃO ORDENE OS ITENS NA MESMA ORDEM QUE ESTÃO NO HTML*/
+    margin-left: 18px;
+        /* FIM*/
+}
+
+.header a {
+    text-transform: uppercase;
+    color: white;
+}
+
+.header a:hover {
+    font-weight: bold;
+}
+
+.header a:active {
+    text-decoration: underline;
+}
+
+.header .current {
+    color: #8C52FF;
+    font-weight: bold;
+}
+
+/* JUMBOTRON 
+    aka BANNER */
+
+/*colocar tudo que está acima em header */
+
+.banner {
+    padding-top: 200px;
+    height: 550px;
+    width: 100%;
+    background: url('https://futebolpeneira.com.br/wp-content/uploads/2020/02/banner.png');
+    background-size: cover;
+    border-bottom: solid 3px #8C52FF;
+}
+
+.banner .container {
+    height: 320px;
+    margin-bottom: 50px;
+    background-color: rgb(35, 35, 35, 0.8);
+    border: solid 3px #8C52FF;
+    box-shadow: 0 10px 10px -2px rgb(0, 0, 0);
+}
+
+.banner .texto {
+    text-align: center;
+    padding: 30px 0 10px 10px;
+}
+
+.banner .texto h2{
+    color: white;
+}
+
+.banner .titulo {
+    font-size: 48px;
+    color: #8C52FF;
+}
+
+/* homeCadastro */
+.homeCadastro{
+    width: 100%;
+    text-align: center;
+}
+
+.homeCadastro button{
+    border-radius: 20px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 1% 4%;
+    background-color: #8C52FF;
+    box-shadow: 0 15px 15px -2px rgb(0, 0, 0);
+}
+
+.homeCadastro a{
+    color: white;
+    
+}
+
+/* Peneiras */
+
+.peneiras .container{
+    text-align: center;
+}
+
+.peneiras .tituloPeneira{
+    padding-top: 2%;
+    width: 100%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.peneiras .container .boxClube{
+    display: inline-block;
+    box-shadow: 0 10px 10px -2px rgb(0, 0, 0);
+    margin: 3%;
+    padding: 1%;
+    height: 250px;
+    width: 250px;
+    background-color: rgb(255, 255, 255);
+    border: solid 3px #8C52FF;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.peneiras .container .boxClube img{
+    width: 256px;
+    margin: auto;
+}
+
+.peneiras .container .boxClube:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 1s;
+}
+
+#infoSub11, 
+#infoSub13,
+#infoSub15,
+#infoSub17{
+    display: none;
+    width: 60%;
+    border: solid 5px #8C52FF;
+    margin: auto;
+    padding: 2%;
+    border-radius: 15px;
+    font-size: 20px;
+    color: white;
+    box-shadow: 0 10px 10px -2px rgb(0, 0, 0);
+}
+
+/* Sobre */
+.sobre{
+    margin-top: 2%;
+    
+}
+
+.tituloSobre{
+    font-size: 35px;
+    padding: 1%;
+    font-weight: bold;
+    color: #8C52FF;
+    text-align: center;
+    border-bottom: solid 5px #8C52FF;
+    border-top: solid 5px #8C52FF;
+    background-color: rgb(19, 19, 19);
+}
+
+.boxSobre{
+    height: 300px;
+    float: left;
+    text-align: center;
+    background-color:rgb(255, 255, 255);
+    width: 27%;
+    padding: 1.2%;
+    margin: 6% 2% 7% 1%;
+    border: solid 5px #8C52FF;
+    box-shadow: 10px 10px 10px -5px rgb(0, 0, 0);
+}
+
+.boxSobre img{
+    width: 80px;
+}
+
+.boxSobre h3{
+    color: black;
+    height: 250px;
+}
+
+/* Equipe */
+.equipe{
+    margin-top: 35%;
+}
+
+.equipe img{
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    border: solid 5px #8C52FF;
+}
+
+.equipe img:hover{
+    transition: 1s;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.equipe .container{
+    margin-top: 3%;
+}
+
+.equipe h4{
+    margin-top: -1%;
+    font-weight: normal;
+    text-align: justify;
+    width: 63%;
+    float: right;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    border-top: solid 12px #8C52FF;
+    width: 100%;
+    background-color: rgb(19, 19, 19);
+    margin-top: 3%;
+    padding-top: 2%;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerFooter {
+    width: 80%;
+    margin: auto;
+}
+
+.link{
+    width: 22%;
+    float: left;
+}
+
+.link h2{
+    color: #8C52FF;
+
+}
+
+.link ul{
+    
+    list-style: none;
+
+}
+
+.link li a{
+    text-decoration: none;
+    color: #8C52FF;
+    font-weight: lighter;
+    /* text-transform: uppercase; */
+}
+
+.link li a:hover{
+    color: white;
+}
+
+.link li a:active{
+    text-decoration: underline; 
+}
+
+.link li{
+    display: inline;
+    margin: 0px;
+}
+
+.contato{
+    width: 25%;
+    float: left;
+}
+
+.contato h2{
+    color: #8C52FF;
+    
+}
+
+.contato ul{
+    list-style: none;
+    
+}
+
+.contato li a{
+    text-decoration: none;
+    color: #8C52FF;
+    font-weight: lighter;
+    /* text-transform: uppercase; */
+}
+
+.contato li a:hover{
+    color: khaki;
+}
+
+.contato li a:active{
+    text-decoration: underline; 
+}
+
+.contato li{
+    display: inline;
+    margin: 0px;
+    color: #8C52FF;
+}
+
+.email{
+    width: 40%;
+    float: right;
+    color: #8C52FF;
+}
+
+.email input{
+    width: 100%;
+}
+
+.inputDuvida{
+    height: 70px;
+    
+}
+
+.email p{
+    color: #8C52FF;
+    text-align: center;
+    
+}
+
+.email button{
+    margin-bottom: 4%;
+    margin-top: 2%;
+    padding: 2%;
+    font-size: 15px;
+    background-color: #8C52FF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
