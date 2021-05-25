@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peneirando - CADASTRO</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.iconpacks.net/icons/1/free-soccer-icon-459-thumb.png">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastroLogin.css">
+    <script src="https://kit.fontawesome.com/48b24e7021.js"></script>
+</head>
+<body>
+    <!-- header início -->
+    <div class="header">
+        <div class="container">
+            <h1>
+                <a href="home.html"> 
+                    Peneirando<img class="imgLogo" src="https://www.iconpacks.net/icons/1/free-soccer-icon-459-thumb.png">
+                </a>
+            </h1>
+            <div class="nav">
+                <ul>
+                    <li><a href="home.html">Peneiras</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="" class="current">Cadastro</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--header fim-->
+
+    <!-- cadastro início -->
+    <div class="cadastro">
+        <div class="container">
+            <h1>Faça aqui seu cadastro!</h1>
+            <div class="formulario">
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+
+                    <h2>Usuário</h2>
+
+                    <label for="nome">Nome completo</label> 
+                    <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4">
+                    
+                    <label for="email">E-mail</label> 
+                    <input type="text" name="email" class="input-padrao" placeholder="Seu e-mail" required minlength="4">
+                    
+                    <label for="senha">Senha</label> 
+                    <input type="password" name="senha" class="input-padrao" placeholder="***************" required minlength="4">
+
+                    <label for="telContato">Telefone de Contato</label> 
+                    <input type="tel" name="telContato" class="input-padrao" placeholder="Seu telefone de contato (utilize somente números)" required minlength="4">
+                    
+                    <label for="dataNascimento">Data de Nascimento</label> 
+                    <input type="date" name="dataNascimento" class="input-padrao" required minlength="4">
+
+                    <label for="genero">Gênero</label> 
+                    <input type="text" name="genero" class="input-padrao"  placeholder="Seu gênero biológico (masculino ou feminino)" required minlength="8" maxlength="9">
+
+                    <h2>Endereço</h2>
+
+                    <label for="uf">UF</label> 
+                    <input type="text" name="uf" class="input-padrao" placeholder="Seu Estado" required maxlength="2">
+                    
+                    <label for="municipio">Município</label> 
+                    <input type="text" name="municipio" class="input-padrao" placeholder="Seu Município" required minlength="4">
+                    
+                    <label for="cep">CEP</label> 
+                    <input type="number" name="cep" class="input-padrao" placeholder="Seu CEP (utilize somente números)" required minlength="8">
+
+                    <label for="logradouro">Logradouro</label> 
+                    <input type="text" name="logradouro" class="input-padrao" placeholder="Seu logradouro (Avenida X, Rua X etc.)" required minlength="4">
+                    
+                    <label for="numero">Número</label> 
+                    <input type="number" name="numero" class="input-padrao" placeholder="Seu Número de endereço" required minlength="1">
+                        
+                    <label for="bairro">Bairro</label> 
+                    <input type="text" name="bairro" class="input-padrao" placeholder="Seu Bairro" required minlength="4">
+
+                    <h2>Dados Pessoais</h2>
+
+                    <label for="posicao">Posição</label> 
+                    <input type="text" name="posicao" class="input-padrao"  placeholder="Sua posição" required maxlength="4">
+                    
+                    <label for="pernaDominante">Perna Dominante</label> 
+                    <input type="text" name="pernaDominante" class="input-padrao" placeholder="Sua perna dominante (destro, canhoto ou ambidestro)" required minlength="4">
+                    
+                    <label for="altura">Altura</label> 
+                    <input type="number" name="altura" class="input-padrao" placeholder="Sua altura (X.XX m)" required minlength="2">
+
+                    <label for="peso">Peso</label> 
+                    <input type="number" name="peso" class="input-padrao" placeholder="Seu peso (XX.X kg)" required minlength="3">
+                    
+                    <label for="caracteristicas">Principais Características</label> 
+                    <textarea name="caracteristicas" class="input-textarea" cols="30" rows="10" placeholder="Fale um pouco sobre você..." required maxlength="255"></textarea>
+                        
+                    <label for="experiencias">Experiência Profissional / Amador</label> 
+                    <textarea name="experiencias" class="input-textarea" cols="30" rows="10" placeholder="Fale um pouco sobre suas experiências com o futebol..." required maxlength="255"></textarea>
+
+                    <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-purple">
+                </form>
+
+                <img src="aguarde-orange.gif" id="img_aguarde" style="display: none; width:100px">
+    
+                <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                    Erro no cadastro
+                </div>
+            </div>
+            <div class="imagem-lateral">
+                <img src="imgs/imgCadastroLateral.png">
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Footer início -->
+    <div class="footer">
+        <div class="containerFooter"> 
+            
+            <div class="link">
+                <ul>
+                    <h2>Link:</h2>
+    
+                    <br>
+                <li> <a href="">Peneiras</a></li> <br>
+                <li> <a href="perfil.html">Perfil</a></li> <br>
+                <li> <a href="cadastro.html">Cadastro</a></li> <br>
+                <li> <a href="login.html">login</a></li> <br>
+            </ul>
+        </div>
+        
+        <div class="contato">
+            <ul>
+                <h2>Contato:</h2>
+                <br>
+                <li> (11) 95983-1316</li> <br>
+                <li>  peneirando.contato@hotmail.com</li> <br>
+            </ul>
+        </div>
+        
+        <div class="email" id="contato">
+            <p>Está com alguma dúvida ou tem alguma reclamação a respeito dos nossos serviços? <br>
+                Envie-nos sua dúvida ou sugestão de melhora!</p>
+                <br>
+                Nome: <br>
+                <input type="text" placeholder=""> <br>
+                E-mail: <br>
+                <input  type="" placeholder=""> 
+                <br><br>
+                <input class="inputDuvida" type="text" placeholder="Escreva sua mensagem..."> 
+                <br> 
+                <button onclick="enviar()">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Footer fim -->
+</body>
+</html>
+
+<script>
+
+    function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
+
+</script>

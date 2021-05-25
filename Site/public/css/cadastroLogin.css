@@ -1,0 +1,140 @@
+/* PÁGINA DO cadastro */
+.cadastro .container {
+    overflow: auto;
+}
+
+.cadastro h1 {
+    margin-top: 10%;
+    margin-bottom: -3%;
+    color: white;
+    padding: 40px 0;
+}
+
+.formulario {
+    float: left;
+    width: 500px;
+}
+
+form label, form p{
+    color: white;
+    display: block;
+    font-size: 20px;
+    margin-bottom:10px ;
+}
+
+form h2{
+    padding-top: 5%;
+    width: 70%;
+    color: white;
+    border-bottom: 5px solid #8C52FF;
+}
+
+.btn-purple {
+    color: white;
+    background-color: #8C52FF;
+    margin: 20px 0 50px 0;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.imagem-lateral {
+    margin-top: -11%;
+    overflow: auto;
+}
+
+.cadastro img {
+    float: right;
+    width: 85%;
+}
+
+.input-padrao {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 25px;
+    width: 90%;
+    border-radius: 5px;
+    border: solid 1px #bbbbbb;
+}
+
+form textarea{
+    border: solid 1px #bbbbbb;
+    padding: 10px 25px;
+    margin-bottom: 3%;
+    width: 90%;
+}
+
+.div-radio {
+    margin-bottom: 30px;
+}
+
+/* PÁGINA DO LOGIN */
+.pag-login {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.pag-login h1 {
+    margin: auto;
+    border-bottom: 4px solid #8C52FF;
+    margin-bottom: 40px;
+    width: 35%;
+}
+
+.pag-login .input-padrao {
+    width: 50%;
+    display: inline-block;
+}
+
+.box-login {
+    position: fixed;
+    margin-top: 10%;
+    float: left;
+    color: white;
+    background-color: rgb(19, 19, 19);
+    border: 5px solid #8C52FF;
+    box-shadow:  3px 3px 5px 2px black;
+    padding: 60px 20px 0px 20px;
+    border-radius: 0 30px 0 30px;
+    width: 400px;
+}
+
+.pag-login .btn-entrar {
+    display: block;
+    float: none;
+    margin: auto;
+    border: none;
+    color: white;
+    padding: 3%;
+    border-radius: 15px;
+    font-size: medium;
+    background-color: #8C52FF;
+}
+
+.pag-login .btn-entrar:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.imgLoginBackground{
+    float: right;
+}
+
+/* EXTRA */
+
+.extra {
+    margin: 10px;
+}
+
+.extra img {
+  height: 50px;
+   visibility: hidden;
+}
+
+.extra .msg_erro {
+    background-color: sandybrown; 
+    color: black; 
+    visibility: hidden;
+}
