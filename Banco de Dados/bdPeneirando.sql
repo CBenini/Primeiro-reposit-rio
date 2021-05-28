@@ -1,3 +1,33 @@
+create database Usuario;
+use Usuario;
+
+create table usuario(
+	idUsuario int primary key auto_increment,
+    nomeCompleto varchar(45) not null, 
+    dataNascimento date not null, 
+    telCel varchar(11) not null, 
+    email varchar(45) not null, 
+    senha varchar(45) not null,  
+    genero varchar(10) not null, 
+    check(genero='masculino' or genero='feminino'),
+    uf varchar(20) not null,
+    municipio varchar(45) not null, 
+    cep char(8) not null, 
+    logradouro varchar(45), 
+    numero int not null,
+    bairro varchar(45) not null,
+    posicao varchar(20) not null,
+    pernaDominante varchar(20) not null, 
+    check (pernaDominante='destro' or pernaDominante='canhoto' or pernaDominante='ambidestro'), 
+    altura int not null, 
+    peso int not null, 
+    caracteristicas varchar(255),
+    experiencias varchar(255)
+);
+
+select * from usuario;
+
+-- --------------------------------------------------
 create database peneirando;
 use peneirando;
 
@@ -44,6 +74,11 @@ desc dados;
 select * from usuario;
 select * from endereco; 
 select * from dados;
+
+drop table usuario;
+drop table endereco;
+drop table dados;
+
 
 
 

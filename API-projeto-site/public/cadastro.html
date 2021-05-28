@@ -15,13 +15,13 @@
     <div class="header">
         <div class="container">
             <h1>
-                <a href="home.html"> 
+                <a href="index.html"> 
                     Peneirando<img class="imgLogo" src="https://www.iconpacks.net/icons/1/free-soccer-icon-459-thumb.png">
                 </a>
             </h1>
             <div class="nav">
                 <ul>
-                    <li><a href="home.html">Peneiras</a></li>
+                    <li><a href="index.html">Peneiras</a></li>
                     <li><a href="perfil.html">Perfil</a></li>
                     <li><a href="" class="current">Cadastro</a></li>
                     <li><a href="login.html">Login</a></li>
@@ -40,17 +40,17 @@
 
                     <h2>Usuário</h2>
 
-                    <label for="nome">Nome completo</label> 
-                    <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4">
+                    <label for="nomeCompleto">Nome completo</label> 
+                    <input type="text" id="nomeCompleto" name="nomeCompleto" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4">
                     
                     <label for="email">E-mail</label> 
-                    <input type="text" name="email" class="input-padrao" placeholder="Seu e-mail" required minlength="4">
+                    <input type="text" id="email" name="email" class="input-padrao" placeholder="Seu e-mail" required minlength="4">
                     
                     <label for="senha">Senha</label> 
                     <input type="password" name="senha" class="input-padrao" placeholder="***************" required minlength="4">
 
-                    <label for="telContato">Telefone de Contato</label> 
-                    <input type="tel" name="telContato" class="input-padrao" placeholder="Seu telefone de contato (utilize somente números)" required minlength="4">
+                    <label for="telCel">Telefone de Contato</label> 
+                    <input type="text" name="telCel" class="input-padrao" placeholder="Seu telefone de contato (Utilize somente números)" required maxlength="11">
                     
                     <label for="dataNascimento">Data de Nascimento</label> 
                     <input type="date" name="dataNascimento" class="input-padrao" required minlength="4">
@@ -61,13 +61,13 @@
                     <h2>Endereço</h2>
 
                     <label for="uf">UF</label> 
-                    <input type="text" name="uf" class="input-padrao" placeholder="Seu Estado" required maxlength="2">
+                    <input type="text" name="uf" class="input-padrao" placeholder="Seu Estado (Sigla)" required maxlength="2">
                     
                     <label for="municipio">Município</label> 
                     <input type="text" name="municipio" class="input-padrao" placeholder="Seu Município" required minlength="4">
                     
                     <label for="cep">CEP</label> 
-                    <input type="number" name="cep" class="input-padrao" placeholder="Seu CEP (utilize somente números)" required minlength="8">
+                    <input type="number" name="cep" class="input-padrao" placeholder="Seu CEP (Utilize somente números)" required minlength="8">
 
                     <label for="logradouro">Logradouro</label> 
                     <input type="text" name="logradouro" class="input-padrao" placeholder="Seu logradouro (Avenida X, Rua X etc.)" required minlength="4">
@@ -81,16 +81,16 @@
                     <h2>Dados Pessoais</h2>
 
                     <label for="posicao">Posição</label> 
-                    <input type="text" name="posicao" class="input-padrao"  placeholder="Sua posição" required maxlength="4">
+                    <input type="text" name="posicao" class="input-padrao"  placeholder="Sua posição" required minlength="1">
                     
                     <label for="pernaDominante">Perna Dominante</label> 
                     <input type="text" name="pernaDominante" class="input-padrao" placeholder="Sua perna dominante (destro, canhoto ou ambidestro)" required minlength="4">
                     
                     <label for="altura">Altura</label> 
-                    <input type="number" name="altura" class="input-padrao" placeholder="Sua altura (X.XX m)" required minlength="2">
+                    <input type="text" name="altura" class="input-padrao" placeholder="Sua altura (X.XX m)" required minlength="2">
 
                     <label for="peso">Peso</label> 
-                    <input type="number" name="peso" class="input-padrao" placeholder="Seu peso (XX.X kg)" required minlength="3">
+                    <input type="text" name="peso" class="input-padrao" placeholder="Seu peso (XX.X kg)" required minlength="2">
                     
                     <label for="caracteristicas">Principais Características</label> 
                     <textarea name="caracteristicas" class="input-textarea" cols="30" rows="10" placeholder="Fale um pouco sobre você..." required maxlength="255"></textarea>
@@ -162,7 +162,7 @@
 <script>
 
     function cadastrar() {
-        aguardar();
+        // aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -179,23 +179,23 @@
                 response.text().then(function (resposta) {
                     div_erro.innerHTML = resposta;
                 });
-                finalizar_aguardar();
+                // finalizar_aguardar();
             }
         });
 
         return false;
     }
 
-    function aguardar() {
-        btn_entrar.disabled = true;
-        img_aguarde.style.display='block';
-        div_erro.style.display='none';
-    }
+    //  function aguardar() {
+    //     btn_entrar.disabled = true;
+    //     img_aguarde.style.display='block';
+    //     div_erro.style.display='none';
+    // }
 
-    function finalizar_aguardar() {
-        btn_entrar.disabled = false;
-        img_aguarde.style.display='none';
-        div_erro.style.display='block';
-    }
+    // function finalizar_aguardar() {
+    //     btn_entrar.disabled = false;
+    //     img_aguarde.style.display='none';
+    //     div_erro.style.display='block';
+    // }
 
 </script>
