@@ -2,7 +2,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
-        background-color: #ecf0f1;
+    background-color: rgb(35, 35, 35, 1.0);
 }
 
 
@@ -18,15 +18,31 @@ a {
 /* CABEÇALHO */
 
 .header {
-    background-color: #232323;
-    border-right: 3px solid orangered;
-    width: 20%;
-    height: 100%;
-    position: fixed;
+    background-color: rgb(19, 19, 19);
+    border-right: 5px solid #8C52FF;
+    border-bottom: 5px solid #8C52FF;
+    border-radius: 0 0 250px 0;
+    width: 22%;
+    height: 85%;
+    position:absolute;
 }
 
-.header .container .highlight {
-    color: orangered
+.highlight {
+    margin-top: 1%;
+    margin-left: 40px;
+    padding: 4%;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 15px;
+    background-color: rgb(19, 19, 19, 0.0);
+    border: 3px solid #8C52FF;
+    color: #8C52FF;
+}
+
+.highlight:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 1s;
 }
 
 .usuario {
@@ -37,188 +53,82 @@ a {
     color: white;
 }
 
+.imgLogo{
+    margin-top: 3%;
+    margin-left: 30%;
+    height: 120px;
+}
+
 .usuario h3 {
     font-weight: 100;
 }
 
-.header h1 {
-    margin: 0;
-    padding: 0;
-    float: left;
-    margin: 35px;
-    color: white;
-    font-size: 25px;
-    padding-bottom: 50px;
-    border-bottom: 2px solid orangered;
+.usuario h3 b {
+    color: #8C52FF;
 }
 
 .header ul {
+    padding: 0 0 0 40px;
     list-style-type: none;
     float: left;
     margin-top: 40px;
 }
 
 .header li {
-    margin: 0 0 30px 0;
-}
-
-.header a {
+    margin: 0 0 25px 0;
     text-transform: uppercase;
     color: white;
 }
 
-.header a:hover {
-    font-weight: bold;
-}
-
-.header .current {
-    color: orangered;
-    font-weight: bold;
-}
-
-
-/* FOOTER */
-
-.footer {
-    background-color: rgb(255, 95, 37);
-    text-align: center;
-    height: 100px;
-}
-
-.footer h4 {
-    color: white;
-    font-weight: 100;
-    margin: 0;
-    padding-top: 40px;
-}
-
-
-
-/* dashboard */
-
-.dashboard {
-    background-color: #ecf0f1;
-    text-align: center;
-    padding: 50px 0;
-    width: 80%;
-    height: 100%;
-    margin-left: auto;
-}
-
-.dashboard h1 {
-    margin-bottom: 40px;
-}
-
-.dashboard .input-padrao {
-    width: 50%;
-    display: inline-block;
-}
-
-.box-login {
-    display: inline-block;
-    background-color: white;
-    box-shadow:  3px 3px 5px 2px #ccc;
-    padding: 60px 20px 0px 20px;
-    border-radius: 20px;
-    width: 400px;
-}
-
-.dashboard .btn-green {
-    display: block;
-    float: none;
-    margin: auto;
-}
-
-.botoes {
-    margin: auto;
-    margin-bottom: 40px;
-    display: block; /* Default de botão é inline-block. Com block, margin auto funciona*/
-}
-
-.btn {
-    color: white;
-    text-transform: uppercase;
-    width: 180px;
-    margin: 0 1%;
-    border: 5px solid #ecf0f1;
-    height: 38px;
-    padding: 0 20px;
+.header li:hover {
     cursor: pointer;
-    background-color: rgb(255, 164, 131);
+    font-weight: bold;
 }
 
-.btn-now {
-    border: 3px solid #232323;
-    background-color: orangered;
+/* Box de Dados */
+#boxDadosPessoais,
+#boxDadosEndereco,
+#boxDadosjogador{
+    font-size: 25px;
+    position: fixed;
+    width: 40%;
+    display: none;
+    margin-top: 6%;
+    margin-left: 35%;
+    text-align: left;
+    padding: 2%;
+    border-radius: 0 50px 0 50px;
+    border: 5px solid #8C52FF;
+    background-color: rgb(19, 19, 19);
+    color: white;
 }
 
-/* EXTRA */
-
-.extra {
-    margin: 10px;
+#boxDadosPessoais ul li,
+#boxDadosEndereco ul li,
+#boxDadosjogador ul li{
+    margin-bottom: 3%;
+    list-style-type: none;
 }
 
-.extra img {
-  height: 50px;
-   visibility: hidden;
-}
-
-.extra .msg_erro {
-    background-color: sandybrown; 
-    color: black; 
-    visibility: hidden;
-}
-
-.caminhao {
-    border: 1px solid red;
+#boxDadosPessoais button{
+    border: 2px solid #8C52FF;
+    padding: 1% 2% 1% 2%;
     border-radius: 10px;
-    display: block;
-    width: 35%;
-    margin: 10px 7%;
-    height: 160px;
-    float: left;
-    text-align: center;
-
-    background-color: white;
-    box-shadow:  3px 3px 5px 2px #ccc;
-    
+    margin-left: 2%;
+    background-color: rgb(19, 19, 19);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.caminhao .valores {
-    margin:auto;
-    overflow: auto;
+#boxDadosPessoais button:hover{
+    cursor: pointer;
 }
 
-.caminhao .valores .valor {
-    margin-left: 13%;
-    width: 30%;
-    float: left;
-}
 
-.caminhao .alertas {
-    width:100%;
-    margin:auto;
-    margin-top: 5px;
-    overflow: auto;
-}
 
-.caminhao .alertas .alerta {
-    margin-left: 13%;
-    width: 30%;
-    float: left;
-}
-.caminhao .alertas .alerta_umidd {
-    margin-right: 13%;
-    width: 30%;
-    float: right;
-}
 
-/* extra */
 
-.show-on-hover {
-    color:#232323
-}
 
-.show-on-hover:hover {
-    color:white
-}
+
+

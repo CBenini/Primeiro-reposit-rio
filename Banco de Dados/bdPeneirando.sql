@@ -1,5 +1,5 @@
-create database Usuario;
-use Usuario;
+create database peneirando;
+use peneirando;
 
 create table usuario(
 	idUsuario int primary key auto_increment,
@@ -79,7 +79,7 @@ drop table usuario;
 drop table endereco;
 drop table dados;
 
-
+drop database usuario;
 
 
 

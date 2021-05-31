@@ -17,7 +17,8 @@ router.get('/ultimas/:idcaminhao', function(req, res, next) {
 	let instrucaoSql = "";
 
 	if (env == 'dev') {
-		// abaixo, escreva o select de dados para o Workbench
+		
+		// abaixo, escreva o select de dados para o WorkbenchE
 		instrucaoSql = `select 
 		temperatura, 
 		umidade, 

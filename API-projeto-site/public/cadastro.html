@@ -38,7 +38,7 @@
             <div class="formulario">
                 <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
 
-                    <h2>Usuário</h2>
+                    <h2>Dados Pessoais</h2>
 
                     <label for="nomeCompleto">Nome completo</label> 
                     <input type="text" id="nomeCompleto" name="nomeCompleto" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4">
@@ -78,7 +78,7 @@
                     <label for="bairro">Bairro</label> 
                     <input type="text" name="bairro" class="input-padrao" placeholder="Seu Bairro" required minlength="4">
 
-                    <h2>Dados Pessoais</h2>
+                    <h2>Informações do Jogador</h2>
 
                     <label for="posicao">Posição</label> 
                     <input type="text" name="posicao" class="input-padrao"  placeholder="Sua posição" required minlength="1">
@@ -87,10 +87,10 @@
                     <input type="text" name="pernaDominante" class="input-padrao" placeholder="Sua perna dominante (destro, canhoto ou ambidestro)" required minlength="4">
                     
                     <label for="altura">Altura</label> 
-                    <input type="text" name="altura" class="input-padrao" placeholder="Sua altura (X.XX m)" required minlength="2">
+                    <input type="number" name="altura" class="input-padrao" placeholder="Sua altura (X cm)" required minlength="2">
 
                     <label for="peso">Peso</label> 
-                    <input type="text" name="peso" class="input-padrao" placeholder="Seu peso (XX.X kg)" required minlength="2">
+                    <input type="number" name="peso" class="input-padrao" placeholder="Seu peso (X kg - um número inteiro)" required minlength="2">
                     
                     <label for="caracteristicas">Principais Características</label> 
                     <textarea name="caracteristicas" class="input-textarea" cols="30" rows="10" placeholder="Fale um pouco sobre você..." required maxlength="255"></textarea>
@@ -179,23 +179,23 @@
                 response.text().then(function (resposta) {
                     div_erro.innerHTML = resposta;
                 });
-                // finalizar_aguardar();
+                 finalizar_aguardar();
             }
         });
 
         return false;
     }
 
-    //  function aguardar() {
-    //     btn_entrar.disabled = true;
-    //     img_aguarde.style.display='block';
-    //     div_erro.style.display='none';
-    // }
+      function aguardar() {
+         btn_entrar.disabled = true;
+         img_aguarde.style.display='block';
+         div_erro.style.display='none';
+     }
 
-    // function finalizar_aguardar() {
-    //     btn_entrar.disabled = false;
-    //     img_aguarde.style.display='none';
-    //     div_erro.style.display='block';
-    // }
+     function finalizar_aguardar() {
+         btn_entrar.disabled = false;
+         img_aguarde.style.display='none';
+         div_erro.style.display='block';
+     }
 
 </script>

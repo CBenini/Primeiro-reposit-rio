@@ -76,9 +76,27 @@
             if (resposta.ok) {
 
                 resposta.json().then(json => {
-
-                    sessionStorage.login_usuario_meuapp = json.login;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    // Dados Pessoais
+                    sessionStorage.email_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nomeCompleto;
+                    sessionStorage.data_nascimento_usuario_meuapp = json.dataNascimento;
+                    sessionStorage.tel_cel_usuario_meuapp = json.telCel;
+                    sessionStorage.senha_usuario_meuapp = json.senha;
+                    sessionStorage.genero_usuario_meuapp = json.genero;
+                    // Dados de Endereço
+                    sessionStorage.uf_usuario_meuapp = json.uf;
+                    sessionStorage.municipio_usuario_meuapp = json.municipio;
+                    sessionStorage.cep_usuario_meuapp = json.cep;
+                    sessionStorage.logradouro_usuario_meuapp = json.logradouro;
+                    sessionStorage.numero_usuario_meuapp = json.numero;
+                    sessionStorage.bairro_usuario_meuapp = json.bairro;
+                    // Dados de Jogo
+                    sessionStorage.posicao_usuario_meuapp = json.posicao;
+                    sessionStorage.perna_dominante_usuario_meuapp = json.pernaDominante;
+                    sessionStorage.altura_usuario_meuapp = json.altura;
+                    sessionStorage.peso_usuario_meuapp = json.peso;
+                    sessionStorage.caracteristicas_usuario_meuapp = json.caracteristicas;
+                    sessionStorage.experiencias_usuario_meuapp = json.experiencias;
 
                     window.location.href = 'perfil.html';
                 });
