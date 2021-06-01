@@ -179,6 +179,7 @@ a {
     border: solid 3px #8C52FF;
     border-radius: 25px;
     text-align: center;
+    transition: 0.5s;
 }
 
 .peneiras .container .boxClube img{
@@ -288,6 +289,7 @@ a {
     width: 350px;
     border-radius: 50%;
     border: solid 5px #8C52FF;
+    transition: 1s;
 }
 
 .equipe img:hover{

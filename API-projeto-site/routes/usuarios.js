@@ -121,4 +121,23 @@ router.get('/', function(req, res, next) {
   	});
 });
 
+
+router.get('/metricas', function(req, res, next) {
+	console.log('Recuperar as métricas dos usuários');
+	
+    let instrucaoSql = `select distinct(select round(avg(peso),1) from usuario) as 'pesoMedio', (select round(avg(altura),1) from usuario) as 'alturaMedia' from usuario;`;
+
+	sequelize.query(instrucaoSql, {
+		model: Usuario,
+		mapToModel: true 
+	})
+	.then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
 module.exports = router;

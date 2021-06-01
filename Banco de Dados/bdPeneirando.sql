@@ -27,6 +27,13 @@ create table usuario(
 
 select * from usuario;
 
+select round(avg(peso),1) as "Peso médio" from usuario;
+select round(avg(altura),1) as "Altura média" from usuario;
+
+select distinct(select round(avg(peso),1) from usuario) as 'pesoMedio', 
+			   (select round(avg(altura),1) from usuario) as 'alturaMedia'
+					from usuario;
+
 -- --------------------------------------------------
 create database peneirando;
 use peneirando;

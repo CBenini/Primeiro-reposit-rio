@@ -19,6 +19,9 @@ let peso_usuario;
 let caracteristicas_usuario;
 let experiencias_usuario;
 
+let altura_media;
+let peso_medio;
+
 function redirecionar_login() {
     window.location.href = 'login.html';
 }

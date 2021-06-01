@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.iconpacks.net/icons/1/free-soccer-icon-459-thumb.png">
 
 
-    <link rel="stylesheet" href="css/dashboards.css">
+    <link rel="stylesheet" href="css/perfil.css">
     <script src="https://kit.fontawesome.com/48b24e7021.js"></script>
 
     <!-- script do google charts -->
@@ -42,36 +42,39 @@
     <!--header fim-->
 
     <!-- Box Início -->
-    <div id="boxMétricas" style="display: none;">
+    <div id="modalMetricas" class="modalDados" style="display: block; font-size: 20px; text-align: center;">
         <h2>Métricas dos Usuários</h2>
         <div class="boxAlturaMedia">
             Altura Média dos Jogadores:
             <br><br>
-
+            <span id="span_altura_media"></span> cm
         </div>
         <div class="boxPesoMedio">
             Peso Médio dos Jogadores:
             <br><br>
-
+            <span id="span_peso_medio"></span> kg
         </div>
     </div>
     <!-- Box Fim -->
 
     <!-- Box Início -->
-    <div id="boxDadosPessoais">
+    <div id="modalDadosPessoais" class="modalDados">
+        <button class="btnFechar" onclick="fecharModal()">X</button>
+        <br>
         <ul>
             <li>NOME: <span id="span_nome"></span></li>
             <li>E-MAIL: <span id="span_email"></span></li>
-            <li>SENHA: <span id="span_senha">xxxxxxxx</span> <button onclick="revelarSenha()">Revelar Senha</button></li>
+            <li>SENHA: <span id="span_senha">xxxxxxxx</span> <button class="btnSenha" onclick="revelarSenha()">Revelar Senha</button></li>
             <li>TELEFONE: <span id="span_tel_cel"></span></li>
             <li>DATA DE NASCIMENTO: <span id="span_data_nascimento"></span></li>
-            <li>GÊNERO: <span id="span_genero"></span></li>
+            <li>GÊNERO: <span id="span_genero"></span></li>            
         </ul>     
     </div>
     <!-- Box Fim -->
 
     <!-- Box Início -->
-    <div id="boxDadosEndereco">
+    <div id="modalDadosEndereco" class="modalDados">
+        <button class="btnFechar" onclick="fecharModal()">X</button>
         <ul>
             <li>UF: <span id="span_uf"></span></li>
             <li>MUNICÍPIO: <span id="span_municipio"></span></li>
@@ -84,7 +87,9 @@
     <!-- Box Fim -->
 
     <!-- Box Início -->
-    <div id="boxDadosjogador">
+    <div id="modalDadosjogador" class="modalDados">
+        <button class="btnFechar" onclick="fecharModal()">X</button>
+        <br>
         <ul>
             <li>POSIÇÃO: <span id="span_posicao"></span></li>
             <li>PERNA DOMINANTE: <span id="span_perna_dominante"></span></li>
@@ -98,40 +103,60 @@
 </body>
 
 <script>
+    
+    function recuperarMetricas(){
+        fetch(`/usuarios/metricas`).then(function(resposta){
+            if(resposta.ok){
+                resposta.json().then(function(resposta){
+                    console.log(JSON.stringify(resposta))
+                    
+                    span_altura_media.innerHTML = resposta[0].alturaMedia;
+                    span_peso_medio.innerHTML = resposta[0].pesoMedio;                   
+                })
+            } else{
+                console.error(`tá errado aqui meu`);
+            }
+        }).catch(function(error){
+            console.error(`Não obtenção das funções: ${error.message}`)
+        })
+    }
+    
+    recuperarMetricas()
+    
     function revelarDadosPessoais(){
-        boxDadosPessoais.style.display="block";
-        boxDadosEndereco.style.display="none";
-        boxDadosjogador.style.display="none";
-
+        modalDadosPessoais.style.display="block";
+        modalDadosEndereco.style.display="none";
+        modalDadosjogador.style.display="none";
+        
         dadosPessoais.style.color="#8C52FF";
         dadosEndereco.style.color="white";
         dadosJogador.style.color="white";
     }
 
     function revelarDadosEndereco(){
-        boxDadosPessoais.style.display="none";
-        boxDadosEndereco.style.display="block";
-        boxDadosjogador.style.display="none";
+        modalDadosPessoais.style.display="none";
+        modalDadosEndereco.style.display="block";
+        modalDadosjogador.style.display="none";
 
         dadosPessoais.style.color="white";
         dadosEndereco.style.color="#8C52FF";
         dadosJogador.style.color="white";
     }
-
+    
     function revelarDadosjogador(){
-        boxDadosPessoais.style.display="none";
-        boxDadosEndereco.style.display="none";
-        boxDadosjogador.style.display="block";
-
+        modalDadosPessoais.style.display="none";
+        modalDadosEndereco.style.display="none";
+        modalDadosjogador.style.display="block";
+        
         dadosPessoais.style.color="white";
         dadosEndereco.style.color="white";
         dadosJogador.style.color="#8C52FF";
     }
-
+    
     let repeticaoRevelarSenha = true; 
-
+    
     function revelarSenha(){
-        if (repeticaoRevelarSenha == true){
+        if (repeticaoRevelarSenha){
             span_senha.innerHTML = senha_usuario;
             repeticaoRevelarSenha = false;
         } else{
@@ -139,143 +164,21 @@
             repeticaoRevelarSenha = true;
         }
     }
+    
+    function fecharModal(){
+        modalDadosPessoais.style.display="none";
+        modalDadosEndereco.style.display="none";
+        modalDadosjogador.style.display="none";
+        modalMetricas.style.display="block";
+
+        dadosPessoais.style.color="white";
+        dadosEndereco.style.color="white";
+        dadosJogador.style.color="white";
+    }
 
     let usuario;
 
     verificar_autenticacao();
-
-    // só mexer se quiser alterar o tempo de atualização
-    // ou se souber o que está fazendo!
-    function atualizacaoPeriodica() {
-        obterdadosporcaminhao(1);
-        obterdadosporcaminhao(2);
-        obterdadosporcaminhao(3);
-        obterdadosporcaminhao(4);
-        setTimeout(atualizacaoPeriodica, 5000);
-    }
-
-    function obterdadosporcaminhao(idcaminhao) {
-        //aguardar();
-        fetch(`/leituras/tempo-real/${idcaminhao}`)
-            .then(resposta => {
-
-                if (resposta.ok) {
-                    resposta.json().then(function (resposta) {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        // aqui, após registro. use os nomes 
-                        // dos atributos que vem no JSON 
-                        var dados = {
-                            temperatura: resposta.temperatura,
-                            umidade: resposta.umidade
-                        }
-
-                        alertar(resposta.temperatura, resposta.umidade, idcaminhao);
-                        atualizarTela(dados, idcaminhao);
-                    });
-                } else {
-
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do caminhao p/ gráfico: ${error.message}`);
-            });
-    }
-
-    function alertar(temperatura, umidade, idcaminhao) {
-        // padrão para meu alerta
-        var limites = {
-            max_temperatura: 40,
-            min_temperatura: 20,
-            max_umidade: 80,
-            min_umidade: 50,
-        };
-
-        // zerar aviso de mensagem
-        var mensagem_temperatura = '';
-        var mensagem_umidade = '';
-        var classe_temperatura = 'alerta';
-        var classe_umidade = 'alerta_umidd';
-
-        // comparando
-        if (temperatura > limites.max_temperatura) {
-            mensagem_temperatura += 'Temperatura alta demais! <br>';
-            classe_temperatura = 'alerta alerta-alto';
-        }
-        if (umidade > limites.max_umidade) {
-            mensagem_umidade += 'Umidade alta demais! <br>';
-            classe_umidade = 'alerta_umidd alerta-alto';
-        }
-        if (temperatura < limites.min_temperatura) {
-            mensagem_temperatura = 'Temperatura baixa demais! <br>';
-            classe_temperatura = 'alerta alerta-baixo';
-        }
-        if (umidade < limites.min_umidade) {
-            mensagem_umidade = 'Umidade baixa demais! <br>';
-            classe_umidade = 'alerta_umidd alerta-baixo';
-        }
-
-        // escolhendo qual alterar
-        var div_temperatura_alterar
-        var div_umidade_alterar
-
-        if (idcaminhao == 1) {
-            div_temperatura_alterar = div_alerta_temperatura
-            div_umidade_alterar = div_alerta_umidade
-        } else if (idcaminhao == 2) {
-            div_temperatura_alterar = div_alerta_temperatura2
-            div_umidade_alterar = div_alerta_umidade2
-        } else if (idcaminhao == 3) {
-            div_temperatura_alterar = div_alerta_temperatura3
-            div_umidade_alterar = div_alerta_umidade3
-        } else if (idcaminhao == 4) {
-            div_temperatura_alterar = div_alerta_temperatura4
-            div_umidade_alterar = div_alerta_umidade4
-        }
-
-        // alterando
-        div_temperatura_alterar.innerHTML = mensagem_temperatura;
-        div_temperatura_alterar.className = classe_temperatura;
-
-        div_umidade_alterar.innerHTML = mensagem_umidade;
-        div_umidade_alterar.className = classe_umidade;
-    }
-
-    // só altere aqui se souber o que está fazendo!
-    function atualizarTela(dados, idcaminhao) {
-        console.log('iniciando atualização da tela...');
-
-        // escolhendo qual alterar
-        var div_temperatura_alterar
-        var div_umidade_alterar
-
-        if (idcaminhao == 1) {
-            div_temperatura_alterar = div_temperatura
-            div_umidade_alterar = div_umidade
-        } else if (idcaminhao == 2) {
-            div_temperatura_alterar = div_temperatura2
-            div_umidade_alterar = div_umidade2
-        } else if (idcaminhao == 3) {
-            div_temperatura_alterar = div_temperatura3
-            div_umidade_alterar = div_umidade3
-        } else if (idcaminhao == 4) {
-            div_temperatura_alterar = div_temperatura4
-            div_umidade_alterar = div_umidade4
-        }
-
-        div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
-
-        div_umidade_alterar.innerHTML = `Umidade: ${dados.umidade}%`;
-    }
-
-
-    function sendData() {
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:9001/api/sendData', false);
-        http.send(null);
-    }
 
     // Descomente abaixo se quiser inserir dados a cada X segundos  
     setInterval(() => {
